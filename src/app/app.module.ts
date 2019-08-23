@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     OrderSuccessComponent,
     MyOrdersComponent,
     AdminProductsComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     AngularFireModule.initializeApp(environment.firebase, 'oshop'),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    //NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
