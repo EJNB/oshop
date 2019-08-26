@@ -8,17 +8,17 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminAuthGuardService implements CanActivate {
+export class AdminAuthGuardService/*  implements CanActivate */ {
 
   constructor(private authService: AuthService, private userService: UserService) { }
 
-  canActivate(): Observable<boolean> {
-    return this.authService.appUser$
+  canActivate()/* : Observable<boolean> */ {
+    // return this.authService.appUser$
       /* Aqui lo q me devuelve propiedad user$ d authservice es un Observable<firebase.User>
        y lo debo mapear para retornar un Observable<boolean>*/
-      .pipe(        
-        map(appUser=> appUser.isAdmin)
-      );
+      // .pipe(        
+      //   map(appUser=> appUser.isAdmin)
+      // );
   }
 }
 
