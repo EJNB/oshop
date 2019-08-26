@@ -10,18 +10,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AuthService {
   user$: Observable<firebase.User>;
   
-  constructor(private afAuth: AngularFireAuth, private route: ActivatedRoute, private router: Router) { 
+  constructor(
+    private afAuth: AngularFireAuth, 
+    private route: ActivatedRoute, 
+    private router: Router
+  ) { 
     this.user$= afAuth.authState;
+    console.log()
   }
 
   login(){
     const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', returnUrl);
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
-      .then(()=> this.router.navigateByUrl(localStorage.getItem('returnUrl')));//todo
   }
 
   logout() {
     this.afAuth.auth.signOut();
+    this.router.navigate(['/login']);
   }
 }
