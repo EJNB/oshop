@@ -1,0 +1,7 @@
+ver q hace el operador switchMap
+tambien ver manana el change detection de angular
+
+cuando nosotros usamos el async pipe todo el tiempo hay un nuevo valor in este observable, angular correrá el change detection, entonce si algunas
+cosas estan modificadas, el state de la app ha cambiado. Luego recorrera hacia abajo el este arbol de objetos  y lo re-render 
+
+cayendo en un ciclo infinito
