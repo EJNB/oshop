@@ -18,6 +18,8 @@
     <label for="category">Category</label>
     <select class="form-control">
       <option value=""></option>
+      <!-- Todos los objetos de firebase tienen una propiedad llamada $key -->
+      <option *ngFor="let category of categories$ | async" [value]="category.$key">{{ category.name }}</option>
     </select>
   </div>
 
