@@ -35,6 +35,7 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
+  /* Esta funcion buscara el usuario logueado en la collection user */
   get appUser$(): Observable<AppUser> {
     return this.user$.pipe(
       switchMap(user=> {

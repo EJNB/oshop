@@ -1,0 +1,3 @@
+create 4 categories
+Bread{ name : 
+install ng2-validate 
