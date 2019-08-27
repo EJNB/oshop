@@ -13,8 +13,11 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">@</span>
           </div>
-          <input #price="ngModel" required ngModel name="price" type="text" class="form-control" id="price">
-          <div *ngIf="price.touched && price.invalid" class="alert alert-danger">The price is required</div>
+          <input #price="ngModel" required ngModel name="price" type="text" class="form-control" id="price" [min]="0">          
+        </div>
+        <div *ngIf="price.touched && price.invalid" class="alert alert-danger">
+          <div *ngIf="price.errors.required">The price is required</div>
+          <div *ngIf="price.errors.min">The price should be 0 or higher</div>
         </div>
       </div>
     
@@ -23,15 +26,18 @@
         <select #category="ngModel" required ngModel name="category" class="form-control">
           <option value=""></option>
           <!-- Todos los objetos de firebase tienen una propiedad llamada $key -->
-          <option *ngFor="let category of categories$ | async" [value]="category.$key">{{ category.name }}</option>
+          <option *ngFor="let c of categories$ | async" [value]="c.name">{{ c.name }}</option>
         </select>
         <div *ngIf="category.touched && category.invalid" class="alert alert-danger">Category is required</div>
       </div>
     
       <div class="form-group">
         <label for="imageUlr">Image Url</label> 
-        <input #imageUrl="ngModel" ngModel required name="imageUrl" id="imageUlr" type="text" class="form-control">
-        <div *ngIf="imageUrl.touched && imageUrl.invalid" class="alert alert-danger">The image url is required</div>
+        <input #imageUrl="ngModel" ngModel required name="imageUrl" id="imageUlr" type="text" class="form-control" url>
+        <div *ngIf="imageUrl.touched && imageUrl.invalid" class="alert alert-danger">
+          <div *ngIf="price.errors.required">The image url is required</div>          
+          <div *ngIf="price.errors.url">Please enter valid url.</div>          
+        </div>
       </div>
     
       <button class="btn btn-primary">Save</button>

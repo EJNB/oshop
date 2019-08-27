@@ -12,7 +12,7 @@ export class ProductFormComponent implements OnInit {
   categories$;
   constructor(
     private router: Router,
-    private categoryService: CategoryService, 
+    private categoryService: CategoryService,
     private productService: ProductService
   ) { 
     this.categories$ = categoryService.getCategories();
