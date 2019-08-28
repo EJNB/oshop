@@ -46,7 +46,7 @@
       </div>
     
       <button class="btn btn-outline-primary">Save</button>
-      <button class="btn btn-outline-danger m-2">Delete</button>
+      <button class="btn btn-outline-danger m-2" (click)="delete()" type="button">Delete</button>
       <a [routerLink]="['/admin/products']" class="btn btn-outline-success">Back to the list</a>
     </form>    
   </div><!--./ col-md-6-->
