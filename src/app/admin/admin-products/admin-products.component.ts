@@ -15,11 +15,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
 
   constructor(private productService: ProductService) { 
     this.subscription= productService.getAll()
-    .subscribe(products=> {
-      //  this.filteredProducts= this.products = products.map(p=> p.payload.k);
-       this.filteredProducts= this.products = products.map(this.mapToProduct);
-    });    
-      
+    .subscribe(products=> this.filteredProducts= this.products = products.map(this.mapToProduct));    
   }
   
   ngOnInit() {}
