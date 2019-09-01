@@ -55,7 +55,7 @@ import { DataTableModule } from 'angular-4-data-table';
     NgbModule,
     FormsModule,
     CustomFormsModule,
-    //DataTableModule
+    DataTableModule
   ],
   providers: [
     AuthService,
