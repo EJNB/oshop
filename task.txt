@@ -1,3 +1,53 @@
-create 4 categories
-Bread{ name : 
-install ng2-validate 
+Verificar lo q he hecho en oshop
+Repasar lo q hay hecho en la  aplicacion
+
+verficr si en el curso de angular de cero de Fernando Herrera hay un video 159. en la seccion 9
+planificar en el tfs:
+
+crear componente new viaje(feature)
+
+crear formulario viajes en forma de wizard(backlog) : 8
+ -- Crear formulario para adicionar viaje: 3
+ Description: En este formulario tendremos 4 tabs. Dicho formulario se mostrara luego de hacer click en nuevo viaje y mostraremos un boton en la parte superior izq para ir al listado
+ -- Crear los componentes de cada tab: 4
+ -- crear rutas asocioadas a los cambios de tabs: 1 
+ 
+time: 6 hrs
+
+tab tripulantes(backlog)(
+	crear funcionalidad q permita la asociacion de tripulantes de una tabla a otra con solo dar un click sobre el tripulante
+	cada tabla tendra una busqueda, para filtrar en caso q no lo encontremos)y ademas permitira add un tripulante nuevo si no existe.
+	subtarea: 
+		-- crear tabla para mostrar todos los tripulantes: 2
+		-- crear tabla para mostrar los tripulantes seleccionados: 2
+		-- agregar funcionalidad para pasar tripulantes de una tabla a otra: 2
+		-- Agregar funcionalidad de filtrar en cada tabla: 2
+		-- Nuevo tripulante: Esto es q en el tab de tripulantes cuando haga click en el boton de nuevo, mostremos un dialog donde podamos agregar nuevo tripulante
+		y una vez agregado salga en la lista de tripulantes asociados y en la otra tabla. 3
+		-- 
+	)
+	time: 12 hrs
+	
+tab datos generales (backlog): 5
+ -- mostrar propositos del viaje1: 1
+ -- puerto de procedencia: 1
+ -- pais: 1
+ -- propietario: 1
+ -- atraque: 1
+ 
+ 
+tab embarcacion (backlog): 
+ -- mostrar en una tabla todas la embarcaciones registradas: 2
+ --	agregar funcionalidad de filtrar dichas embarcaciones: 2
+ --	agregar funcionalidad de agregar embarcacion en caso de q no exista en listado: 2
+time : 6
+
+tab servicios(backlog):
+ -- mostrar tabla con todos los tarifarios : 1
+ -- mostrar tablas con todos los servicios : 1
+ -- mostrar tabla con todos los servicios seleccionados: 1
+ -- agregar funcionalidad para mostrar los servicios: Description: SE mostrarn todos los servicios del tarifario seleccionado. Por ejemplo selecciono un tarifario
+  determinado y se mostrarn en la tabla de todos los servicios, los servicios asociados a ese tarifaario: 4
+ -- agregar funcionalidad de asociar servicios al viaje: Description: UNa vez seleccionado el tarifario, se pueden empezar a seleccionar todos los servicios q tendra mi viaje: 4,
+time: 13
+
