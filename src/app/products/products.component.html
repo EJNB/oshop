@@ -2,6 +2,12 @@
   <div class="col-3">
     <div class="list-group">
       <a 
+        routerLink="/"
+        [class.active]="!category"
+        class="list-group-item list-group-item-action">
+        All Categories
+      </a>
+      <a 
         *ngFor="let c of categories"
         routerLink="/"
         [queryParams]="{category: c.key}"
@@ -13,7 +19,7 @@
   </div>
   <div class="col">
     <div class="row">
-      <ng-container *ngFor="let product of products; let i= index">
+      <ng-container *ngFor="let product of filteredProducts; let i= index">
         <div class="col">
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
@@ -24,7 +30,7 @@
             </div>
           </div>  
         </div>
-        <div *ngIf="(i+1) % 2 ===0" class="w-100"></div>    
+        <div *ngIf="(i+1) % 3 ===0" class="w-100"></div>    
       </ng-container>  
     </div>
   </div>
