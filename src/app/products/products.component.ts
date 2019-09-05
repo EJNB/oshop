@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
-import { CategoryService } from '../services/category.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
-import { Category } from '../models/category';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -14,13 +12,11 @@ import { switchMap } from 'rxjs/operators';
 export class ProductsComponent {
   products: Product[]= [];
   filteredProducts: Product[] = [];
-  categories: Category[];
   category: string;
 
   constructor(
     route: ActivatedRoute,
     productsService: ProductService, 
-    categoryService: CategoryService
   ) { 
     productsService
       .getAll()
@@ -31,15 +27,12 @@ export class ProductsComponent {
         })
       )            
       .subscribe(params=> {
-          this.category= params.get('category');//obtengo del queryParam el valor de la clave category
-    
-          this.filteredProducts = (this.category) ?
-            this.products.filter(product=> product.category === this.category) :
-            this.products; 
-        });
-
-    categoryService.getAll().subscribe(p=> { this.categories= p.map(this.mapToCategories) });
-    
+        this.category= params.get('category');//obtengo del queryParam el valor de la clave category
+  
+        this.filteredProducts = (this.category) ?
+          this.products.filter(product=> product.category === this.category) :
+          this.products; 
+      });
   }
 
   private mapToProducts = product=> {    
@@ -47,8 +40,8 @@ export class ProductsComponent {
     return { key,...product.payload.val() };    
   }
 
-  private mapToCategories = category=> {    
-    let {key}= category;
-    return { key,...category.payload.val() };    
-  }
+  // private mapToCategories = category=> {    
+  //   let {key}= category;
+  //   return { key,...category.payload.val() };    
+  // }
 }
