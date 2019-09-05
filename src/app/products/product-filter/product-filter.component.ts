@@ -4,7 +4,7 @@ import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'product-filter',
   templateUrl: './product-filter.component.html',
-  styles: []
+  styleUrls: ['./product-filter.component.css']
 })
 export class ProductFilterComponent implements OnInit {
   categories$;  

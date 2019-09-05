@@ -2,7 +2,9 @@
   <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl" alt="{{ product.title }}">
   <div class="card-body">
     <h5 class="card-title">{{ product.title }}</h5>
-    <p class="card-text">{{ product.price | currency:'USD':true }}</p>
-    <a href="" class="btn btn-primary" *ngIf="showActions">Add product</a>
+    <p class="card-text">{{ product.price | currency:'USD':true }}</p>    
+  </div>
+  <div class="card-footer">
+    <a href="" class="btn btn-primary btn-block" *ngIf="showActions">Add product</a>
   </div>
 </div>

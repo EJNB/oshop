@@ -4,10 +4,10 @@ import { Product } from '../models/product';
 @Component({
   selector: 'product-card',
   templateUrl: './product-card.component.html',
-  styles: []
+  styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
   @Input() product: Product;
-
+  @Input('show-actions') showAction= true;
   constructor() { }
 }
